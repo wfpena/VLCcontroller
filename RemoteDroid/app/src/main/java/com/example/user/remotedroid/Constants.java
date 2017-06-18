@@ -3,7 +3,7 @@ package com.example.user.remotedroid;
 
 public class Constants {
 
-    public static String SERVER_IP = "192.168.1.77";
+    public static String SERVER_IP = "192.168.1.77";//Tem que ser o IP do VLC local
     public static int SERVER_PORT = 4212;
     public static final String PLAY="play";
     public static final String NEXT="next";

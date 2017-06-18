@@ -67,33 +67,30 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.makeActionOverflowMenuShown();
-        context = this; //save the context to show Toast messages
+        context = this;
         //Get references of all buttons
         playPauseButton = (ImageButton)findViewById(R.id.playPauseButton);
         fsButton = (ImageButton)findViewById(R.id.fsButton);
         volBar = (SeekBar) findViewById(R.id.volBar);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
 
-        //nextButton = (Button)findViewById(R.id.nextButton);
-        //previousButton = (Button)findViewById(R.id.previousButton);
+        //setando o máximo da barra de volume no app
         volBar.setMax(125);
 
         tv = (TextView)findViewById(R.id.textView);
         tvTempo = (TextView)findViewById(R.id.tvTempo);
-        //this activity extends View.OnClickListener, set this as onClickListener
-        //for all buttons
         playPauseButton.setOnClickListener(this);
-       // nextButton.setOnClickListener(this);
-        //previousButton.setOnClickListener(this);
+
+
 
         volBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int progressChangedValue = 0;
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //Modificando o volume de acordo com o que o usuário pressionar na barra?
                 progressChangedValue = progress;
                 tv.setText(progress + "/125");
                 out.println("volume " + progress*320/125);
-                //Toast.makeText(MainActivity.this, "Seek bar progress is :" + progressChangedValue,Toast.LENGTH_SHORT).show();
             }
 
             public void onStartTrackingTouch(SeekBar seekBar) {
