@@ -47,20 +47,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     SeekBar volBar;
     SeekBar seekBar;
 
-    //Button nextButton;
-    //Button previousButton;
-    //TextView mousePad;
-
     private boolean isConnected=false;
     private boolean mouseMoved=false;
     private Socket socket;
     private PrintWriter out;
     BufferedReader in;
-
- /*   private float initX =0;
-    private float initY =0;
-    private float disX =0;
-    private float disY =0;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +59,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         this.makeActionOverflowMenuShown();
         context = this;
-        //Get references of all buttons
+        //Referências
         playPauseButton = (ImageButton)findViewById(R.id.playPauseButton);
         fsButton = (ImageButton)findViewById(R.id.fsButton);
         volBar = (SeekBar) findViewById(R.id.volBar);
@@ -110,14 +101,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                // tv.setText(progress + "/125");
               //  out.println("volume " + progress*320/125);
                 //StringBuilder instr = new StringBuilder();
-
-/*                String inputLine;
-                out.println("get_length");
-                ReadDataCon conn = new ReadDataCon();
-                conn.execute(in);
-                seekBar.setMax(file_length);
-                out.println("seek "+ progress);
-                tvTempo.setText(progress+"/"+file_length);*/
 
                 //Toast.makeText(MainActivity.this, "Seek bar progress is :" + progressChangedValue,Toast.LENGTH_SHORT).show();
             }
@@ -183,7 +166,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.fsButton:
                 if (isConnected && out!=null) {
-                    out.println("pause");//send "play" to server
+                    out.println("pause");//send "pause" to server
                 }
                 break;
             case R.id.playPauseButton:
