@@ -228,11 +228,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket
                             .getOutputStream())), true); //create output stream to send data to server
                     in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-
                     out.println("1234");
-                   // if(in.readLine()!=null)Log.d("DEB1","Teste");
-                   // Log.d("DEB2",in.readLine());
                 }
             }catch (IOException e){
                 Log.e("remotedroid", "Error while creating OutWriter", e);
@@ -245,11 +241,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         @Override
         protected String doInBackground(BufferedReader... params) {
-            //String temp = "erro";
             StringBuilder response = new StringBuilder();
-           // String response = "erro";
-            //String line = null;
-           // int i = 0;
 
             try {
                 response.append(in.readLine());
@@ -296,7 +288,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     public void fullS(View v){if (isConnected && out!=null) {
         out.println("f");//send "play" to server
         //Toast.makeText(context,  v.getId()+"",Toast.LENGTH_LONG).show();
-        //Toast.makeText(context,"AAA",Toast.LENGTH_LONG).show();
     }}
 
 

@@ -1,6 +1,7 @@
 package com.example.user.remotedroid;
 
 
+//Constantes
 public class Constants {
 
     public static String SERVER_IP = "192.168.1.77";//Tem que ser o IP do VLC local
